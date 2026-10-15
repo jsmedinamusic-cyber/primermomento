@@ -22,4 +22,12 @@ while (intentos < maxIntentos && sesionIniciada === false) {
          alert("Ha superado el número máximo de intentos. Saliendo...");
       }
    }
+
+   formLogin.onsubmit = function (enviar) {
+enviar.preventDefault();
+if (bloqueado) return;
+
+const usuario = document.getElementById("loginUsuario").value;
+const clave = document.getElementById("loginClave").value;
+   
 }
