@@ -35,5 +35,16 @@ if (usuarios[usuario] === clave) {
     mensajeLogin.innerHTML = "¡Bienvenido, " + usuario + "!";
     intentos = 0;
 } else {
-   
+      intentos++;
+    if (intentos >= 3) {
+    bloqueado = true;
+    mensajeLogin.className = "error";
+    mensajeLogin.innerHTML = "Cuenta bloqueada por 3 intentos fallidos.";
+    formLogin.querySelector("button").disabled = true;
+    } else {
+    mensajeLogin.className = "error";
+    mensajeLogin.innerHTML = "Datos incorrectos. Intento " + intentos + " de 3.";
+    }
+}
+};
 }
